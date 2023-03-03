@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"begin");
+    NSLog(@"begin~~~~~~~~");
 }
 
 - (IBAction)fblogin:(id)sender {
