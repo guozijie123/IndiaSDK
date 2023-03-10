@@ -59,7 +59,27 @@
 
 
 //请求仓库列表
--(void)getTheShopListWithUserid:(NSString *)userid withBlock:(void(^)(NSDictionary * result,NSString * errorInfo))block;
+/*
+ 用户id
+ 页数
+ 数据条数
+ 类型：0全部 1已兑换 2已提货 3已赠送
+ 
+ 返回类型数组 数组结构如下
+ 
+ "id": 8, //id
+ "sku": "xxx.prize.com", //sku
+ "userid": 12, //用户id
+ "orderid": "SP202302240951530010028888", //订单id
+ "boxid": "aaaaa", //盒子id
+ "crtime": 1677203514, //中奖时间
+ "coin": 2000, //可兑换盲盒币
+ "title": "稀有电动车7", //名称
+ "type": 3, //类型 0全部 1已兑换 2提货 3赠送
+ "exchange": 1, //是否可以兑换   0否   1是
+ "img": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.alicdn.com%2Fbao%2Fupl" //图片
+ */
+-(void)getTheShopListWithUserid:(NSString *)userid Page:(NSString *)page Limit:(NSString *)limi Type:(NSString *)type withBlock:(void(^)(NSArray * result,NSString * errorInfo))block;
 
 
 //下单接口，根据要求传入参数，经过处理，会返回第三方的支付链接，使用webview来打开此链接即可完成支付
@@ -73,5 +93,41 @@
  支付数量
  */
 -(void)pushTheAmount:(NSString *)amount  payAmount:(NSString *)payamount Couponid:(NSString *)coupon  userid:(NSString *)uid channelId:(NSString *)channel  boxid:(NSString *)box count:(NSString *)count Block:(void(^)(NSString * payUrl,NSString * payOrder,NSString * error))block;
+
+
+//开盒记录
+/*
+ 用户id
+ 页数
+ 数据条数
+ 
+ 返回类型数组 数组结构如下
+ 
+ "id": 221, //id
+ "boxid": "aaaaa", //盒子id
+ "otime": 1677203514, //开盒时间
+ "userid": 12, //用户id
+ "amount": "500.00", //实际支付金额
+ "exchange": 1, //是否已兑换 0否 1是
+ "exsku": null, //已兑换的商品sku
+ "sku": "[\"mmm.prize.com\",\"rrr.prize.com\",\"xxx.prize.com\"]", //中奖的商品sku
+ "conopen": 3, //开盒次数
+ "orderid": "SP202302240951530010028888", //订单id
+ "title": "超级大盲盒", //盲盒名称
+ "introduce": "每5发保底笔触稀有/史诗/传说", //盲盒描述
+ "img": "http://open.saintic.com/api/bingPic/?picSize=2" //盲盒图片
+ 
+ */
+-(void)getTheOpenBoxListWithUserid:(NSString *)userid Page:(NSString *)page Limit:(NSString *)limi withBlock:(void(^)(NSArray * result,NSString * errorInfo))block;
+
+
+//兑换金币
+/*
+ 用户ID
+ 物品id
+ 
+ 返回兑换状态
+ */
+-(void)exchangeGoldCoinWithUserid:(NSString *)userid thingID:(NSString *)thingid withBlock:(void(^)(BOOL isSuccess,NSString * errorInfo))block;
 
 @end
