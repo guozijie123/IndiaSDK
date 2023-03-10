@@ -30,4 +30,17 @@
     
 }
 
+- (IBAction)payAction:(id)sender {
+    
+    [[IndiaServer getStartServer] pushTheAmount:@"100" payAmount:@"49.9" Couponid:@"" userid:@"12" channelId:@"1" boxid:@"aaaaa" count:@"1" Block:^(NSString *payUrl, NSString *payOrder, NSString *error) {
+        
+        
+        
+    }];
+    
+    
+}
+
+
+
 @end
