@@ -34,7 +34,7 @@
     
     [[IndiaServer getStartServer] pushTheAmount:@"100" payAmount:@"49.9" Couponid:@"" userid:@"12" channelId:@"1" boxid:@"aaaaa" count:@"1" Block:^(NSString *payUrl, NSString *payOrder, NSString *error) {
         
-        
+        NSLog(@"根据返回的url，使用webview来打开进行支付");
         
     }];
     
