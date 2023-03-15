@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51916DD29C15E930001808D /* swiftJump.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51916DC29C15E930001808D /* swiftJump.swift */; };
 		A59460F7299F204300CEC6CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A59460F6299F204300CEC6CC /* AppDelegate.m */; };
 		A59460FA299F204300CEC6CC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A59460F9299F204300CEC6CC /* SceneDelegate.m */; };
 		A59460FD299F204300CEC6CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59460FC299F204300CEC6CC /* ViewController.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A51916DB29C15E920001808D /* demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A51916DC29C15E930001808D /* swiftJump.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftJump.swift; sourceTree = "<group>"; };
 		A59460F2299F204300CEC6CC /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59460F5299F204300CEC6CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A59460F6299F204300CEC6CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,11 +143,13 @@
 				A59460F9299F204300CEC6CC /* SceneDelegate.m */,
 				A59460FB299F204300CEC6CC /* ViewController.h */,
 				A59460FC299F204300CEC6CC /* ViewController.m */,
+				A51916DC29C15E930001808D /* swiftJump.swift */,
 				A59460FE299F204300CEC6CC /* Main.storyboard */,
 				A5946101299F204500CEC6CC /* Assets.xcassets */,
 				A5946103299F204500CEC6CC /* LaunchScreen.storyboard */,
 				A5946106299F204500CEC6CC /* Info.plist */,
 				A5946107299F204500CEC6CC /* main.m */,
+				A51916DB29C15E920001808D /* demo-Bridging-Header.h */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				TargetAttributes = {
 					A59460F1299F204300CEC6CC = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					A594610C299F204600CEC6CC = {
 						CreatedOnToolsVersion = 14.2;
@@ -310,6 +316,7 @@
 				A59460F7299F204300CEC6CC /* AppDelegate.m in Sources */,
 				A5946108299F204500CEC6CC /* main.m in Sources */,
 				A59460FA299F204300CEC6CC /* SceneDelegate.m in Sources */,
+				A51916DD29C15E930001808D /* swiftJump.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -502,11 +510,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.egame.xjhx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = xjhx_Dev01;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -516,6 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -538,11 +551,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.egame.xjhx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = xjhx_Dev01;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -550,6 +566,7 @@
 		A5946125299F204600CEC6CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -567,6 +584,7 @@
 		A5946126299F204600CEC6CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -584,6 +602,7 @@
 		A5946128299F204600CEC6CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -599,6 +618,7 @@
 		A5946129299F204600CEC6CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
