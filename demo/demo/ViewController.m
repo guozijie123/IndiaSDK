@@ -7,6 +7,8 @@
 
 #import "ViewController.h"
 #import <IndiaSDK/IndiaServer.h>
+#import <IndiaSDK/AESCipher.h>
+#import <IndiaSDK/HandleTheString.h>
 @interface ViewController ()
 
 @end
